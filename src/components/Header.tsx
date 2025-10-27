@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Header() {
   return (
-    <header className="w-full border-b border-border/40 py-4">
+    <header className="fixed top-0 left-0 w-full border-b border-border/40 py-4 backdrop-blur-sm bg-[var(--charcoal)]/40 z-50">
       <div className="max-w-4xl mx-auto px-6 flex items-center justify-between gap-4">
         <a href="#" className="text-lg font-semibold tracking-tight">
           CMN

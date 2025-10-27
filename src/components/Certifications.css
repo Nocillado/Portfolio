@@ -1,0 +1,20 @@
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 var(--glow-spread) var(--glow-color);
+  }
+  50% {
+    box-shadow: 0 0 calc(var(--glow-spread) * 1.5) var(--glow-color);
+  }
+  100% {
+    box-shadow: 0 0 var(--glow-spread) var(--glow-color);
+  }
+}
+
+.certification-card {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.certification-card:hover {
+  animation: none;
+  box-shadow: 0 0 calc(var(--glow-spread) * 2) var(--glow-color);
+}
