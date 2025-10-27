@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./tw-animate.css";
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -61,19 +62,23 @@
   --border: oklch(0.923 0.003 48.717);
   --input: oklch(0.923 0.003 48.717);
   --ring: oklch(0.709 0.01 56.259);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0.001 106.423);
-  --sidebar-foreground: oklch(0.147 0.004 49.25);
-  --sidebar-primary: oklch(0.216 0.006 56.043);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.97 0.001 106.424);
-  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
-  --sidebar-border: oklch(0.923 0.003 48.717);
-  --sidebar-ring: oklch(0.709 0.01 56.259);
+
+  /* Chart colors - maintaining consistency */
+  --chart-1: var(--aqua);
+  --chart-2: #4A90E2;
+  --chart-3: #9B51E0;
+  --chart-4: #F2994A;
+  --chart-5: #EB5757;
+
+  /* Sidebar colors */
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--charcoal);
+  --sidebar-primary: var(--aqua);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--off-white-dark);
+  --sidebar-accent-foreground: var(--charcoal);
+  --sidebar-border: #e2e2e2;
+  --sidebar-ring: var(--aqua);
 }
 
 .dark {
@@ -95,19 +100,23 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.553 0.013 58.071);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.216 0.006 56.043);
-  --sidebar-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.268 0.007 34.298);
-  --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.553 0.013 58.071);
+
+  /* Dark mode specific chart colors */
+  --chart-1: var(--aqua);
+  --chart-2: #60A5FA;
+  --chart-3: #A78BFA;
+  --chart-4: #FBBF24;
+  --chart-5: #F87171;
+
+  /* Dark mode sidebar */
+  --sidebar: var(--charcoal);
+  --sidebar-foreground: var(--off-white);
+  --sidebar-primary: var(--aqua);
+  --sidebar-primary-foreground: var(--off-white);
+  --sidebar-accent: var(--charcoal-light);
+  --sidebar-accent-foreground: var(--off-white);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: var(--aqua);
 }
 
 @layer base {
@@ -117,4 +126,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
 }
