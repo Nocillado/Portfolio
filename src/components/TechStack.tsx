@@ -1,5 +1,3 @@
-import { type ReactNode } from 'react';
-
 interface TechItem {
   name: string;
   logoPath: string;

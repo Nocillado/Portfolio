@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button"
-
 export default function Contact() {
   return (
     <section id="contact" className="mt-24 mb-16 scroll-animate" data-scroll>
