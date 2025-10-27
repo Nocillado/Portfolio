@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@400;500;600;700&family=Archivo:wght@400;500;600&display=swap');
+
+/* Clean, minimal animations only */
+
+:root {
+  /* Fonts */
+  --font-heading: 'Aleo', serif;
+  --font-body: 'Archivo', sans-serif;
+  
+  --content-max: 1024px;
+  --charcoal: #2E2E2E;
+  --charcoal-light: #383838;
+  --charcoal-dark: #252525;
+  --off-white: #F5F5F5;
+  --off-white-dark: #E8E8E8;
+  --aqua: #00BFA6;
+  --aqua-light: #00D4B8;
+  --aqua-dark: #00A891;
+  
+  /* New gradient colors */
+  --gradient-1: linear-gradient(135deg, var(--aqua) 0%, #00B4D8 100%);
+  --gradient-2: linear-gradient(45deg, var(--charcoal-light) 0%, var(--charcoal) 100%);
+  --gradient-glow: 0 0 20px rgba(0, 191, 166, 0.15);
+}
+
+/* Minimalist dark theme structure adjustments */
+#root {
+  margin: 0 auto;
+  background-color: var(--charcoal);
+  min-height: 100vh;
+  color: var(--off-white);
+}
+
+/* App layout helpers */
+.hero-title {
+  letter-spacing: -0.02em;
+  animation: fadeInSlide 1s ease-out forwards, singleGlow 2s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(10px);
+  text-shadow: 0 0 15px rgba(0, 191, 166, 0);
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes singleGlow {
+  0% {
+    text-shadow: 0 0 15px rgba(0, 191, 166, 0);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(0, 191, 166, 0.7),
+                 0 0 25px rgba(0, 191, 166, 0.4);
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.card-min {
+  background: var(--charcoal-light);
+  border: 1px solid rgba(245, 245, 245, 0.1);
+  padding: 1.25rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.card-min:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 191, 166, 0.3);
+}
+
+/* small utility */
+.muted { color: var(--off-white-dark); }
+
+@media (max-width: 640px) {
+  .hero-title { font-size: 1.5rem }
+}
+
+/* Ensure theme is applied */
+body {
+  background-color: var(--charcoal-dark);
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+/* Additional dark theme adjustments */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--powder-blue);
+}
+
+.accent-text {
+  color: var(--powder-blue);
+}
+
+.card-min:hover {
+  border-color: var(--powder-blue-dark);
+  transition: border-color 0.2s ease;
+}
+
+/* Enhanced button styles */
+.button {
+  position: relative;
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.9375rem;
+}
+
+/* Primary button */
+.button-primary {
+  background: var(--aqua);
+  color: var(--charcoal-dark);
+}
+
+.button-primary:hover {
+  background: var(--aqua-light);
+  transform: translateY(-1px);
+}
+
+/* Secondary button styles */
+.button-secondary {
+  background: transparent;
+  border: 1px solid var(--aqua);
+  color: var(--off-white);
+}
+
+.button-secondary:hover {
+  background-color: rgba(0, 191, 166, 0.05);
+  border-color: var(--aqua-light);
+  color: var(--aqua-light);
+}
+
+/* Button focus states */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--aqua);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Header button animations */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.button {
+  position: relative;
+  transition: all 0.3s ease !important;
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.button:hover {
+  transform: scale(1.05) !important;
+  text-shadow: 0 0 15px rgba(0, 191, 166, 0.1) !important;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--aqua);
+  opacity: 0;
+  filter: blur(15px);
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.button:hover::before {
+  opacity: 0.1;
+}
+
+/* Contact link special styling */
+nav a[href="#contact"]:not(.button) {
+  transition: all 0.3s ease;
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+nav a[href="#contact"]:not(.button):hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(0, 191, 166, 0.1);
+}
+
+nav a[href="#contact"]:not(.button)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--aqua);
+  opacity: 0;
+  filter: blur(15px);
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+nav a[href="#contact"]:not(.button):hover::before {
+  opacity: 0.1;
+}
+
+/* Tech stack styles */
+.tech-item {
+  position: relative;
+  background: var(--charcoal-light);
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+}
+
+/* Navigation styles */
+nav a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Projects link animation */
+nav a[href="#projects"] {
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+/* Glow effect for nav links */
+nav a:not(.button):hover {
+  color: var(--aqua);
+  text-shadow: 0 0 15px rgba(0, 191, 166, 0.1);
+  transform: scale(1.05);
+}
+
+nav a:not(.button)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--aqua);
+  opacity: 0;
+  filter: blur(15px);
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+nav a:not(.button)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--aqua);
+  transition: width 0.3s ease;
+}
+
+nav a:not(.button):hover::before {
+  opacity: 0.1;
+}
+
+nav a:not(.button):hover::after {
+  width: 100%;
+}
+
+/* Logo underline effect */
+header a:first-child::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--aqua);
+  transition: width 0.3s ease;
+}
+
+header a:first-child:hover::after {
+  width: 100%;
+}
+
+/* Header animation */
+header {
+  animation: slideDown 0.8s ease-out forwards;
+  position: relative;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo animation */
+header a:first-child {
+  position: relative;
+  display: inline-block;
+  animation: fadeSlideIn 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+header a:first-child:hover {
+  color: var(--aqua);
+  text-shadow: 0 0 15px rgba(0, 191, 166, 0.1);
+  transform: scale(1.05);
+}
+
+header a:first-child::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--aqua);
+  opacity: 0;
+  filter: blur(15px);
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+header a:first-child:hover::before {
+  opacity: 0.1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tech-item:hover {
+  border-color: var(--aqua);
+  transform: translateY(-1px);
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Hero section - clean and stable */
+.hero-title {
+  color: var(--off-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* About section styles */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.leading-relaxed {
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Content typography */
+p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+/* Scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(60px);
+  filter: blur(5px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity, filter;
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Enhanced section animations */
+.hero-section.scroll-animate {
+  transition-delay: 0.2s;
+}
+
+.hero-section.scroll-animate:not(.animate-in) {
+  transform: translateY(80px);
+}
+
+.tech-stack-section.scroll-animate {
+  transition-delay: 0.3s;
+}
+
+.tech-stack-section.scroll-animate:not(.animate-in) {
+  transform: translateY(70px);
+}
+
+.projects-section.scroll-animate {
+  transition-delay: 0.4s;
+}
+
+.projects-section.scroll-animate:not(.animate-in) {
+  transform: translateY(70px);
+}
+
+/* Tech stack item animations */
+.tech-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tech-stack-section.animate-in .tech-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tech-stack-section.animate-in .tech-item:nth-child(1) { transition-delay: 0.4s; }
+.tech-stack-section.animate-in .tech-item:nth-child(2) { transition-delay: 0.5s; }
+.tech-stack-section.animate-in .tech-item:nth-child(3) { transition-delay: 0.6s; }
+.tech-stack-section.animate-in .tech-item:nth-child(4) { transition-delay: 0.7s; }
+.tech-stack-section.animate-in .tech-item:nth-child(5) { transition-delay: 0.8s; }
+.tech-stack-section.animate-in .tech-item:nth-child(6) { transition-delay: 0.9s; }
+
+/* Project card animations */
+.projects-grid article {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-section.animate-in .projects-grid article {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-section.animate-in .projects-grid article:nth-child(1) { transition-delay: 0.4s; }
+.projects-section.animate-in .projects-grid article:nth-child(2) { transition-delay: 0.5s; }
+.projects-section.animate-in .projects-grid article:nth-child(3) { transition-delay: 0.6s; }
+.projects-section.animate-in .projects-grid article:nth-child(4) { transition-delay: 0.7s; }
