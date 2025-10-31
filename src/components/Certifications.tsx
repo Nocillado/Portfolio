@@ -24,8 +24,12 @@ export default function Certifications() {
             key={index}
             className="group bg-[var(--charcoal-light)] p-6 rounded-lg border border-[var(--off-white-dark)] border-opacity-10 
                      hover:border-[var(--aqua)] transition-all duration-300
-                     hover:shadow-[0_0_20px_rgba(0,191,166,0.1)] hover:translate-y-[-2px] animate-slide-up"
-            style={{ '--delay': `${0.2 + index * 0.1}s` } as React.CSSProperties}
+                     hover:shadow-[0_0_20px_rgba(0,191,166,0.1)] hover:translate-y-[-2px] 
+                     animate-slide-up opacity-0"
+            style={{ 
+              animationDelay: `${index * 0.2}s`,
+              animationFillMode: 'forwards'
+            }}
           >
             <div className="space-y-4">
               <div>
