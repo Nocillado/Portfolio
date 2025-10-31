@@ -18,6 +18,22 @@ const SAMPLE = [
     fullDescription: "Kings Hideout is a comprehensive e-commerce platform designed to bring people together through quality home products. The platform combines style, comfort, and functionality to create a seamless shopping experience. Built with Shopify's Liquid template language, the site features custom CSS animations, JavaScript interactivity, and a responsive design that works flawlessly across all devices. The project showcases modern e-commerce best practices including optimized product pages, intuitive navigation, and secure checkout processes."
   },
   {
+    title: "Ultimate Golf Simulator",
+    description: "A premium e-commerce platform for golf enthusiasts, offering simulators, carts, and clubs with a seamless shopping experience.",
+    href: "https://ultimategolfsimulator.com/",
+    tags: ["Liquid", "CSS", "JavaScript", "HTML"],
+    image: "/Images/Ultimate.png",
+    images: [
+      "/Images/Ultimate.png",
+      "/Images/Golf Sim.png",
+      "/Images/Carts.png",
+      "/Images/Top picks.png",
+      "/Images/Contact us.png",
+      "/Images/Terms.png"
+    ],
+    fullDescription: "Ultimate Golf Simulator is a comprehensive e-commerce platform dedicated to bringing the authentic golf experience into every home. The platform offers a curated selection of golf simulators, electric golf carts, and premium golf clubs. Built with Shopify's Liquid template language, the site features a modern, responsive design with engaging product showcases, intuitive collections navigation, and seamless checkout. The mission is to make golf accessible, inspiring, and true to its essence, helping players connect, grow, and find joy in every swing with trusted innovation and a passion for authenticity."
+  },
+  {
     title: "Minimal Blog",
     description: "A fast, markdown-driven blog with static generation and clean UI.",
     href: "https://example.com",
@@ -36,8 +52,8 @@ export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleProjectClick = (project: typeof SAMPLE[0], index: number) => {
-    // Only make the first project clickable
-    if (index === 0) {
+    // Make the first and second projects clickable
+    if (index === 0 || index === 1) {
       setSelectedProject(project);
       setIsModalOpen(true);
     }
@@ -73,7 +89,7 @@ export default function Projects() {
                 href={p.href} 
                 tags={p.tags} 
                 image={p.image}
-                isClickable={index === 0}
+                isClickable={index === 0 || index === 1}
               />
             </div>
           ))}
