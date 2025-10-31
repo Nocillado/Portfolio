@@ -67,10 +67,7 @@ export default function Projects() {
   return (
     <>
       <section id="projects" className="mt-10 scroll-animate projects-section">
-        <div className="flex items-baseline justify-between">
-          <h2 className="text-2xl font-semibold">Selected projects</h2>
-          <a className="muted text-sm" href="#">View all</a>
-        </div>
+        <h2 className="text-2xl font-semibold">Selected projects</h2>
 
         <div className="projects-grid mt-4">
           {SAMPLE.map((p, index) => (

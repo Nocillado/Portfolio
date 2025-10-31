@@ -50,7 +50,7 @@ export default function TechStack() {
   const duplicatedTech = [...devTech, ...devTech, ...devTech];
 
   return (
-    <section className="mt-16 mb-20 scroll-animate tech-stack-section">
+    <section id="tech-stack" className="mt-16 mb-20 scroll-animate tech-stack-section">
       <div className="w-full">
         <h2 className="text-xl font-semibold mb-6">Tech Stack</h2>
         <div className="relative overflow-hidden w-full">

@@ -1,5 +1,6 @@
 import './App.css'
 import Header from "./components/Header.tsx"
+import Sidebar from "./components/Sidebar.tsx"
 import Hero from "./components/Hero.tsx"
 import Experience from "./components/Experience.tsx"
 import TechStack from "./components/TechStack.tsx"
@@ -13,6 +14,7 @@ function App() {
   useScrollAnimation()
   return (
     <div className="min-h-screen flex flex-col">
+      <Sidebar />
       <Header />
       <main className="flex-1 w-[80%] mx-auto pt-24 pb-12">
         <Hero />

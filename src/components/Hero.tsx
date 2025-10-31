@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="pt-8 scroll-animate hero-section">
+    <section id="hero" className="pt-8 scroll-animate hero-section">
       <div className="max-w-3xl">
         <h1 className="hero-title text-4xl md:text-5xl font-bold">Christian Mark Nocillado</h1>
         
