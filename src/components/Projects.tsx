@@ -66,7 +66,7 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="mt-10 scroll-animate projects-section">
+      <section id="projects" className="mt-10 pt-24 scroll-animate projects-section">
         <h2 className="text-2xl font-semibold">Selected projects</h2>
 
         <div className="projects-grid mt-4">

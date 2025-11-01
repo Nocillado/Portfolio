@@ -40,7 +40,7 @@ const experiences: ExperienceItem[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="mt-16 scroll-animate">
+    <section id="experience" className="mt-16 pt-24 scroll-animate">
       <h2 className="text-2xl font-semibold mb-8">Experience</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">

@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="mt-24 mb-16 scroll-animate" data-scroll>
+    <section id="contact" className="mt-24 mb-16 pt-24 scroll-animate" data-scroll>
       <h2 className="text-2xl font-semibold mb-8 animate-fade-in">Let's Connect</h2>
       
       <div className="grid md:grid-cols-2 gap-10">
@@ -24,8 +24,8 @@ export default function Contact() {
                 </svg>
                 <div className="absolute inset-0 bg-[var(--accent)] opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300" />
               </div>
-              <a href="mailto:christianmarknocillado03@gmail.com" 
-                className="text-[var(--off-white)] group-hover:text-[var(--aqua)] transition-all duration-300 relative
+              <a href="mailto:christianmarknocillado03@gmail.com?subject=Let's%20Connect%20-%20Project%20Inquiry" 
+                className="text-[var(--off-white)] group-hover:text-[var(--aqua)] transition-all duration-300 relative cursor-pointer
                 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] 
                 after:bg-[var(--aqua)] after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform 
                 after:duration-300 after:origin-left">
@@ -123,9 +123,9 @@ export default function Contact() {
                 </div>
               </div>
               
-              <a href="mailto:christianmark.nocillado@gmail.com" 
+              <a href="mailto:christianmarknocillado03@gmail.com?subject=Let's%20Connect%20-%20Project%20Inquiry" 
                 className="inline-flex items-center gap-2 text-[var(--aqua)] hover:text-[var(--aqua-light)] 
-                transition-all duration-300 group-hover:gap-3">
+                transition-all duration-300 group-hover:gap-3 font-medium">
                 Send me a message
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" 
                   stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"

@@ -16,7 +16,7 @@ const certifications: CertificationProps[] = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="mt-16 scroll-animate certifications-section">
+    <section id="certifications" className="mt-16 pt-24 scroll-animate certifications-section">
       <h2 className="text-2xl font-semibold mb-8">Certifications & Awards</h2>
       <div className="space-y-12">
         {certifications.map((cert, index) => (
